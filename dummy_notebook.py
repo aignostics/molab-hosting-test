@@ -14,7 +14,10 @@ def _():
 
 
 @app.cell
-def _(dropdown, mo):
+async def _(dropdown, mo):
+    import micropip
+    await micropip.install("plotly") # <== new package install, not included in marimo env OOB.
+
     import plotly.express as px
     from skimage import io
 
@@ -24,11 +27,6 @@ def _(dropdown, mo):
     img = io.imread('public/' + img)
     fig = px.imshow(img)
     fig
-    return
-
-
-@app.cell
-def _():
     return
 
 
