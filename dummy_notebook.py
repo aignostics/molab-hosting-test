@@ -4,7 +4,7 @@ __generated_with = "0.21.0"
 app = marimo.App(width="medium")
 
 
-@app.cell
+@app.cell(hide_code=True)
 def _():
     import marimo as mo
 
@@ -13,10 +13,10 @@ def _():
     return (dropdown,)
 
 
-@app.cell
+@app.cell(hide_code=True)
 async def _(dropdown):
     import micropip
-    await micropip.install("plotly") # <== new package install, not included in marimo env OOB.
+    await micropip.install("plotly[express]") # <== new package install, not included in marimo env OOB.
     import plotly.express as px
     from PIL import Image
 
