@@ -18,7 +18,11 @@ async def _(dropdown):
     import micropip
     await micropip.install("plotly[express]") # <== new package install, not included in marimo env OOB.
     import plotly.express as px
+
     from PIL import Image
+    from PIL import ImageFile
+
+    ImageFile.LOAD_TRUNCATED_IMAGES=True
 
     img = 'cat.png' if dropdown.value == "Show me a cat!" else 'dog.png'
 
