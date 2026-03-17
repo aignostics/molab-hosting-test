@@ -17,7 +17,8 @@ def _():
 async def _(dropdown, mo):
     import micropip
     await micropip.install("plotly") # <== new package install, not included in marimo env OOB.
-
+    await micropip.install("imageio")
+    
     import plotly.express as px
     from skimage import io
 
