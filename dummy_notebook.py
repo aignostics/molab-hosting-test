@@ -10,22 +10,19 @@ def _():
 
     dropdown = mo.ui.dropdown(options=["Show me a cat!", "Show me a dog!"], label="What would you like to see?")
     dropdown
-    return dropdown, mo
+    return (dropdown,)
 
 
 @app.cell
-async def _(dropdown, mo):
+async def _(dropdown):
     import micropip
     await micropip.install("plotly") # <== new package install, not included in marimo env OOB.
-    await micropip.install("imageio")
-    
     import plotly.express as px
-    from skimage import io
-
-    loc = mo.notebook_location()
+    from PIL import Image
 
     img = 'cat.png' if dropdown.value == "Show me a cat!" else 'dog.png'
-    img = io.imread('public/' + img)
+
+    img = Image.open('public/cat.png')
     fig = px.imshow(img)
     fig
     return
