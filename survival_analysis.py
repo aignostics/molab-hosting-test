@@ -8,10 +8,10 @@ app = marimo.App(width="medium")
 def _():
     import marimo as mo
 
-    mo.install("huggingface_hub") # <== new package install, not included in marimo env OOB.
-    # await micropip.install("lifelines") # <== new package install, not included in marimo env OOB.
-    # await micropip.install("scipy") # <== new package install, not included in marimo env OOB.
-    # await micropip.install("plotly") # <== new package install, not included in marimo env OOB.
+    await micropip.install("huggingface_hub") # <== new package install, not included in marimo env OOB.
+    await micropip.install("lifelines") # <== new package install, not included in marimo env OOB.
+    await micropip.install("scipy") # <== new package install, not included in marimo env OOB.
+    await micropip.install("plotly") # <== new package install, not included in marimo env OOB.
     return 
 
 @app.cell(hide_code=True)
