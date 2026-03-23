@@ -7,7 +7,7 @@ app = marimo.App(width="medium")
 @app.cell
 def _():
     import marimo as mo
-
+    import micropip
     await micropip.install("huggingface_hub") # <== new package install, not included in marimo env OOB.
     await micropip.install("lifelines") # <== new package install, not included in marimo env OOB.
     await micropip.install("scipy") # <== new package install, not included in marimo env OOB.
