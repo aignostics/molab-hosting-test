@@ -6,16 +6,16 @@ app = marimo.App(width="medium")
 
 @app.cell
 def _():
-    import micropip
-    await micropip.install("huggingface_hub") # <== new package install, not included in marimo env OOB.
-    await micropip.install("lifelines") # <== new package install, not included in marimo env OOB.
-    await micropip.install("scipy") # <== new package install, not included in marimo env OOB.
-    await micropip.install("plotly") # <== new package install, not included in marimo env OOB.
+    import marimo as mo
+
+    mo.install("huggingface_hub") # <== new package install, not included in marimo env OOB.
+    # await micropip.install("lifelines") # <== new package install, not included in marimo env OOB.
+    # await micropip.install("scipy") # <== new package install, not included in marimo env OOB.
+    # await micropip.install("plotly") # <== new package install, not included in marimo env OOB.
     return 
 
 @app.cell(hide_code=True)
 def _():
-    import marimo as mo
     import pandas as pd
     from huggingface_hub import hf_hub_download
 
